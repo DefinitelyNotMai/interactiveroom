@@ -3,14 +3,10 @@ const minHand = document.querySelector("[data-minute]");
 const hourHand = document.querySelector("[data-hour]");
 
 function setClock() {
-  console.log("Hello");
-
   const currentDate = new Date();
-  let seconds = currentDate.getSeconds() / 60;
-  let minutes = (currentDate.getMinutes() + seconds) / 60;
-  let hours = currentDate.getHours();
-
-  console.log(seconds);
+  const seconds = currentDate.getSeconds() / 60;
+  const minutes = (currentDate.getMinutes() + seconds) / 60;
+  const hours = (currentDate.getHours() + minutes) / 12;
 
   setRotation(secHand, seconds);
   setRotation(minHand, minutes);
